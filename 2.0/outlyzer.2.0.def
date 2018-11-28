@@ -50,11 +50,12 @@ From: phusion/baseimage:0.10.2
 	
 	wget -P /opt/ https://github.com/EtieM/outLyzer/archive/v2.tar.gz
 	# mv v2.tar.gz /opt/v2.tar.gz
-	cd /opt/ && tar xzvf v2.tar.gz 
+	cd /opt/ && tar xzvf v2.tar.gz
+	rm /opt/v2.tar.gz 
 	## ou "v2" uniquement (a tester)
 	
 	chmod 755 /opt/outLyzer-2/outLyzer.py
-	ln -s /opt/outLyzer-2/outLyzer.py /bin
+	ln -s /opt/outLyzer-2/outLyzer.py /usr/local/bin/outlyzer.py
 	
 	
 %environment
@@ -63,4 +64,4 @@ From: phusion/baseimage:0.10.2
 	
 %runscript
 
-	exec python outLyzer.py "$@"
+	exec outlyzer.py "$@"
