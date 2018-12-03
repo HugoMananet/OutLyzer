@@ -12,16 +12,16 @@ From: phusion/baseimage:0.10.2
 
 %files
 
+	outLyzer.py /opt/outLyzer.py
+	
+%post
+
 	mkdir /soft
 	mkdir /work
 	mkdir /user1
 	mkdir /user2
 	mkdir /tmp3
-
-	outLyzer.py /opt/outLyzer.py
 	
-%post
-
 	apt-get -y update
 	apt-get -y install build-essential \
 	wget \
